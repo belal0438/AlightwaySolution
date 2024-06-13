@@ -1,0 +1,36 @@
+.usermainFormcontainer {
+  margin: auto;
+  width: fit-content;
+}
+
+.usercontainer {
+  margin-top: 5rem;
+  padding: 12px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.userform {
+  display: grid;
+  align-items: end;
+}
+
+.userform > div > input {
+  margin: 0.5rem;
+  height: 20px;
+  width: 200px;
+}
+
+.userform > div > select {
+  margin: 0.5rem;
+  height: 25px;
+  width: 220px;
+}
+
+.submitandswicthBtn {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.submitandswicthBtn > button {
+  height: 25px;
+}

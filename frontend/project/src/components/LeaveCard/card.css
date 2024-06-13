@@ -1,0 +1,28 @@
+.mainCarContainer {
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+}
+
+.spanwithAtrr {
+  background-color: bisque;
+}
+.statusSpane {
+  background-color: rgb(229, 238, 238);
+  padding: 3px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.toDateSpane {
+  margin-left: 10px;
+}
+
+.statusBtn {
+  display: flex;
+  justify-content: end;
+}
+
+.statusBtn > button {
+  margin-right: 1rem;
+}

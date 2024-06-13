@@ -1,0 +1,30 @@
+.mainNavbarContainer {
+  background-color: rgb(53, 52, 52);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 12px;
+}
+
+.headingAndLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.h1text {
+  color: white;
+}
+.loginBtn {
+  margin-left: 4rem;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.loggoutBtn {
+  margin: 0 4rem;
+  height: 30px;
+  border-radius: 4px;
+}

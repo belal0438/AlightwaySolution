@@ -1,0 +1,8 @@
+.allCardContainer {
+  margin: auto;
+  width: 90%;
+  font-family: verdana;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
