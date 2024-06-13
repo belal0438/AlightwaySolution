@@ -1,44 +1,73 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./card.css";
+import axios from "axios";
+import AuthContext from "../../store/auth-context";
 
-const Card = () => {
+const Card = (props) => {
+  const authcxt = useContext(AuthContext);
+
+  const token = authcxt.token;
+  if (!token) {
+    alert("User not logged in");
+  }
+
+  const approveClick = async (id) => {
+    const result = await axios.put(
+      `http://localhost:4000/api/v1/leave/application/${id}`,
+      { status: "Approved" },
+      { headers: { Authorization: token } }
+    );
+
+    console.log("resultApprove", result.response.status);
+  };
+
+  const rejectClick = async (id) => {
+    const result = await axios.put(
+      `http://localhost:4000/api/v1/leave/application/${id}`,
+      { status: "Rejected" },
+      { headers: { Authorization: token } }
+    );
+
+    console.log("resultRejected", result.response.status);
+  };
+
   return (
     <div className="mainCarContainer">
       <div>
         <h2>
-          <span className="spanwithAtrr">Email</span>:{" "}
-          <span>mohd@gmail.com</span>
+          {/* {props.email} */}
+          <span className="spanwithAtrr">Email</span>:<span>email.com</span>
         </h2>
       </div>
       <div>
         <p>
-          <span className="spanwithAtrr">Leave Type</span> :{" "}
-          <span>vacation</span>
+          <span className="spanwithAtrr">Leave Type</span> :
+          <span>{props.leaveType}</span>
         </p>
       </div>
       <div>
         <p className="spanwithAtrr">Date</p>
-        <span>From: 20-11-4</span>
-        <span className="toDateSpane">To: 20-11-4</span>
+        <span>From: {props.fromDate}</span>
+        <span className="toDateSpane">To: {props.toDate}</span>
       </div>
       <div>
         <p className="spanwithAtrr">reason</p>
-        <span>these is oure first vacation leave </span>
+        <span>{props.reason} </span>
       </div>
       <div>
         <p>
-          <span className="spanwithAtrr">Status</span> :
-          <span className="statusSpane">pending</span>
+          <span className="spanwithAtrr">Current status</span> :
+          <span className="statusSpane">{props.status}</span>
         </p>
       </div>
 
-      {/* <div>
+      <div>
         <p className="spanwithAtrr">Status</p>
         <div className="statusBtn">
-          <button>Accepted</button>
-          <button>Rejcted</button>
+          <button onClick={() => approveClick(props.id)}>Approved</button>
+          <button onClick={() => rejectClick(props.id)}>Rejected</button>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

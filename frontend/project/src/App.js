@@ -1,31 +1,38 @@
-import React from "react";
+// import React, { Suspense, lazy, useContext } from "react";
 import "./App.css";
-import Layout from "./components/Layout/layout";
-import UserRegistration from "./components/UserForm/userRegistration";
-import LeaveForm from "./components/RequestApplication/leaveForm";
-import CardContainer from "./components/LeaveCard/cardContainer";
+import RouteComponent from "./routerComponent";
+// import Layout from "./components/Layout/layout";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  createRoutesFromElements,
-} from "react-router-dom";
+// import AuthContext from "./store/auth-context";
 
-const routes = createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route path="" element={<CardContainer />} />
-    <Route path="login" element={<UserRegistration />} />
-    <Route path="leave-form" element={<LeaveForm />} />
-  </Route>
-);
+// // import UserRegistration from "./components/UserForm/userRegistration";
+// const UserRegistration = lazy(() => import("./components/UserForm/userRegistration"));
+// // import LeaveForm from "./components/RequestApplication/leaveForm";
+// const LeaveForm = lazy(() => import("./components/RequestApplication/leaveForm"));
+// // import CardContainer from "./components/LeaveCard/cardContainer";
+// const CardContainer = lazy(() => import("./components/LeaveCard/cardContainer"));
 
-const router = createBrowserRouter(routes);
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Route,
+//   createRoutesFromElements,
+// } from "react-router-dom";
+
+// const routes = createRoutesFromElements(
+//   <Route path="/" element={<Layout />}>
+//     <Route path="" element={<CardContainer />} />
+//     <Route path="login" element={<UserRegistration />} />
+//     <Route path="leave-form" element={<LeaveForm />} />
+//   </Route>
+// );
+
+// const router = createBrowserRouter(routes);
 
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <RouteComponent />
     </div>
   );
 }
